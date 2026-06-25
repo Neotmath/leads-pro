@@ -1,11 +1,9 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="en" dir="ltr" id="html-root">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="As Leads Pro — Local business intelligence for marketing agencies. We find businesses with digital gaps so you can pitch with confidence.">
 <title>As Leads Pro — Local Business Intelligence</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -168,6 +166,27 @@ nav {
 }
 .btn-ghost:hover { border-color: var(--ink-2); }
 
+.btn-pdf {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 16px; border-radius: var(--radius);
+  font-size: .8rem; font-weight: 600;
+  text-decoration: none; color: #fff;
+  background: var(--blue); border: none; cursor: pointer;
+  transition: transform .15s, box-shadow .15s;
+}
+.btn-pdf:hover { transform: translateY(-1px); box-shadow: 0 2px 8px rgba(27,79,216,.3); }
+.btn-pdf.ar { background: #0D9488; }
+.btn-pdf.ar:hover { box-shadow: 0 2px 8px rgba(13,148,136,.3); }
+
+.pdf-buttons {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  align-items: center;
+}
+.pdf-label {
+  font-family: var(--mono); font-size: .75rem; color: var(--ink-3);
+  margin-right: 4px;
+}
+
 section { padding: 80px 5%; }
 .section-inner { max-width: 1100px; margin: 0 auto; }
 .section-label {
@@ -191,7 +210,7 @@ section { padding: 80px 5%; }
 .report-card {
   background: var(--paper); border: 1px solid var(--border);
   border-radius: 10px; padding: 24px;
-  cursor: pointer; transition: transform .2s, box-shadow .2s, border-color .2s;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
   position: relative; overflow: hidden;
 }
 .report-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--blue); }
@@ -201,7 +220,10 @@ section { padding: 80px 5%; }
 }
 .report-card:hover::before { opacity: 1; }
 .report-icon { font-size: 1.6rem; margin-bottom: 12px; }
-.report-title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+.report-title {
+  font-size: 1rem; font-weight: 700; margin-bottom: 8px;
+  display: flex; justify-content: space-between; align-items: center;
+}
 .report-desc { font-size: .85rem; color: var(--ink-2); margin-bottom: 16px; line-height: 1.6; }
 .gap-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .gap-tag {
@@ -233,10 +255,9 @@ html[dir="rtl"] thead th { text-align: right; }
 tbody tr { border-bottom: 1px solid var(--border); transition: background .1s; }
 tbody tr:last-child { border-bottom: none; }
 tbody tr:hover { background: var(--surface); }
-tbody td { padding: 12px 16px; font-size: .88rem; }
+tbody td { padding: 12px 16px; font-size: .88rem; vertical-align: middle; }
 .td-name { font-weight: 600; }
 .td-addr { color: var(--ink-3); font-size: .8rem; }
-.td-phone { font-family: var(--mono); font-size: .8rem; color: var(--ink-2); }
 .badge {
   display: inline-block; padding: 2px 8px; border-radius: 4px;
   font-size: .72rem; font-weight: 600;
@@ -244,6 +265,13 @@ tbody td { padding: 12px 16px; font-size: .88rem; }
 .badge-nosite  { background: #FEF2F2; color: var(--red); }
 .badge-slow    { background: #FFFBEB; color: var(--amber); }
 .badge-notrack { background: #F0FDF4; color: var(--green); }
+.score-badge {
+  display: inline-block; padding: 2px 10px; border-radius: 20px;
+  font-size: .8rem; font-weight: 700;
+  background: var(--surface); border: 1px solid var(--border);
+}
+.score-high { background: #D1FAE5; color: #065F46; border-color: #6EE7B7; }
+.score-med  { background: #FEF3C7; color: #92400E; border-color: #F59E0B; }
 
 #methodology { background: var(--paper); }
 .method-grid {
@@ -336,15 +364,8 @@ footer a { color: rgba(255,255,255,.6); }
   </div>
   <div class="sector-pills">
     <h3 data-en="Sectors We Cover" data-ar="القطاعات التي نغطيها">Sectors We Cover</h3>
-    <div class="pills-grid">
-      <div class="pill"><span class="pill-dot blue"></span><span data-en="Dental Clinics" data-ar="عيادات الأسنان">Dental Clinics</span></div>
-      <div class="pill"><span class="pill-dot green"></span><span data-en="Restaurants" data-ar="المطاعم">Restaurants</span></div>
-      <div class="pill"><span class="pill-dot amber"></span><span data-en="HVAC / Plumbers" data-ar="تكييف وسباكة">HVAC / Plumbers</span></div>
-      <div class="pill"><span class="pill-dot red"></span><span data-en="Medical Clinics" data-ar="عيادات طبية">Medical Clinics</span></div>
-      <div class="pill"><span class="pill-dot purple"></span><span data-en="Cleaning Services" data-ar="شركات تنظيف">Cleaning Services</span></div>
-      <div class="pill"><span class="pill-dot teal"></span><span data-en="Real Estate" data-ar="عقارات">Real Estate</span></div>
-      <div class="pill"><span class="pill-dot blue"></span><span data-en="Hotels & Travel" data-ar="فنادق وسفر">Hotels & Travel</span></div>
-      <div class="pill"><span class="pill-dot green"></span><span data-en="Law Firms" data-ar="مكاتب محاماة">Law Firms</span></div>
+    <div class="pills-grid" id="dynamicPills">
+      <!-- سيتم ملؤها ديناميكياً -->
     </div>
     <div class="live-badge"><span class="live-dot"></span><span data-en="Pipeline running · Reports refreshed weekly" data-ar="النظام يعمل · التقارير تُحدَّث أسبوعياً">Pipeline running · Reports refreshed weekly</span></div>
   </div>
@@ -357,20 +378,22 @@ footer a { color: rgba(255,255,255,.6); }
   <h2 class="section-title" data-en="This week's gaps, by sector" data-ar="ثغرات هذا الأسبوع حسب القطاع">This week's gaps, by sector</h2>
   <p class="section-sub" data-en="Each report lists real businesses with a documented digital weakness — ready for your agency to pitch against." data-ar="كل تقرير يحتوي على شركات حقيقية لديها ثغرة رقمية موثّقة — جاهزة لعرض خدماتك عليها.">Each report lists real businesses with a documented digital weakness — ready for your agency to pitch against.</p>
 
-  <div class="report-grid">
-    <div class="report-card"><div class="report-icon">🦷</div><div class="report-title" data-en="Dental Clinics" data-ar="عيادات الأسنان">Dental Clinics</div><div class="report-desc" data-en="Active dental practices with no website or broken online booking — high-value clients for web and marketing agencies." data-ar="عيادات أسنان نشطة بدون موقع أو نظام حجز أونلاين — عملاء عالي القيمة لوكالات الويب والتسويق.">Active dental practices with no website or broken online booking — high-value clients for web and marketing agencies.</div><div class="gap-tags"><span class="gap-tag critical" data-en="No Website" data-ar="بدون موقع">No Website</span><span class="gap-tag critical" data-en="No Booking" data-ar="بدون حجز">No Booking</span><span class="gap-tag" data-en="Weak SEO" data-ar="SEO ضعيف">Weak SEO</span></div></div>
-    <div class="report-card"><div class="report-icon">🍽️</div><div class="report-title" data-en="Restaurants" data-ar="المطاعم">Restaurants</div><div class="report-desc" data-en="Restaurants with good ratings but zero digital presence — no website, no ads, no delivery app. Ideal for app and marketing agencies." data-ar="مطاعم ذات تقييمات جيدة لكن بلا حضور رقمي — بدون موقع أو إعلانات أو تطبيق توصيل. مثالية لوكالات التطبيقات والتسويق.">Restaurants with good ratings but zero digital presence — no website, no ads, no delivery app.</div><div class="gap-tags"><span class="gap-tag critical" data-en="No Website" data-ar="بدون موقع">No Website</span><span class="gap-tag" data-en="No App" data-ar="بدون تطبيق">No App</span><span class="gap-tag" data-en="No Analytics" data-ar="بدون تحليلات">No Analytics</span></div></div>
-    <div class="report-card"><div class="report-icon">🏥</div><div class="report-title" data-en="Medical Clinics" data-ar="العيادات الطبية">Medical Clinics</div><div class="report-desc" data-en="Medical and specialist clinics with outdated or missing websites — patients can't find or book them online." data-ar="عيادات طبية متخصصة بمواقع قديمة أو مفقودة — المرضى لا يجدونها أو يحجزون عبر الإنترنت.">Medical and specialist clinics with outdated or missing websites — patients can't find or book them online.</div><div class="gap-tags"><span class="gap-tag critical" data-en="No Booking Form" data-ar="بدون نموذج حجز">No Booking Form</span><span class="gap-tag" data-en="Outdated Site" data-ar="موقع قديم">Outdated Site</span></div></div>
-    <div class="report-card"><div class="report-icon">🏨</div><div class="report-title" data-en="Hotels & Travel" data-ar="الفنادق والسفر">Hotels & Travel</div><div class="report-desc" data-en="Hotels and travel agencies losing bookings to OTAs because they lack a direct booking website or digital marketing." data-ar="فنادق ووكالات سفر تخسر حجوزاتها لمنصات الحجز لأنها تفتقر لموقع حجز مباشر أو تسويق رقمي.">Hotels and travel agencies losing bookings because they lack a direct booking website or digital marketing.</div><div class="gap-tags"><span class="gap-tag critical" data-en="No Direct Booking" data-ar="بدون حجز مباشر">No Direct Booking</span><span class="gap-tag" data-en="No Social Ads" data-ar="بدون إعلانات">No Social Ads</span></div></div>
-    <div class="report-card"><div class="report-icon">🏢</div><div class="report-title" data-en="Real Estate" data-ar="العقارات">Real Estate</div><div class="report-desc" data-en="Real estate companies and brokers with no property listing website or digital lead capture — big opportunity for web agencies." data-ar="شركات عقارية وسماسرة بدون موقع لعرض العقارات أو استقطاب العملاء رقمياً — فرصة كبيرة لوكالات الويب.">Real estate companies with no property listing website or digital lead capture.</div><div class="gap-tags"><span class="gap-tag critical" data-en="No Listing Site" data-ar="بدون موقع عقاري">No Listing Site</span><span class="gap-tag" data-en="No Lead Form" data-ar="بدون نموذج عملاء">No Lead Form</span></div></div>
-    <div class="report-card"><div class="report-icon">🧹</div><div class="report-title" data-en="Cleaning & HVAC" data-ar="تنظيف وتكييف">Cleaning & HVAC</div><div class="report-desc" data-en="Service businesses relying entirely on word-of-mouth with no digital presence — easy wins for local SEO and web design agencies." data-ar="شركات خدمية تعتمد كلياً على التوصية الشخصية بلا حضور رقمي — فرص سهلة لوكالات SEO وتصميم المواقع.">Service businesses relying entirely on word-of-mouth with no digital presence.</div><div class="gap-tags"><span class="gap-tag critical" data-en="No Website" data-ar="بدون موقع">No Website</span><span class="gap-tag" data-en="No Reviews" data-ar="بدون تقييمات">No Reviews</span><span class="gap-tag" data-en="No Local SEO" data-ar="بدون SEO محلي">No Local SEO</span></div></div>
+  <div class="report-grid" id="dynamicCards">
+    <!-- سيتم ملؤها ديناميكياً -->
   </div>
 
-  <!-- الجدول الحي (يتم ملؤه آلياً حسب اللغة) -->
-  <div class="table-wrap">
+  <div class="table-wrap" id="reportTableWrap">
     <div class="table-header">
       <h3 data-en="Live: Businesses Without a Website" data-ar="مباشر: شركات بدون موقع ويب">Live: Businesses Without a Website</h3>
-      <span class="table-meta" data-en="يتم التحديث من جوجل شيت · Google Sheets" data-ar="يتم التحديث من جوجل شيت · Google Sheets">Updated from Google Sheets</span>
+      <div class="pdf-buttons">
+        <span class="pdf-label" data-en="📥 Download Full Report" data-ar="📥 تحميل التقرير الكامل">📥 Download Full Report</span>
+        <a href="report-en.pdf" download="AsLeadsPro_Report_EN.pdf" class="btn-pdf" style="background:#1B4FD8;">
+          🇬🇧 EN
+        </a>
+        <a href="report-ar.pdf" download="AsLeadsPro_Report_AR.pdf" class="btn-pdf ar" style="background:#0D9488;">
+          🇸🇦 AR
+        </a>
+      </div>
     </div>
     <table>
       <thead>
@@ -380,11 +403,11 @@ footer a { color: rgba(255,255,255,.6); }
           <th data-en="Sector" data-ar="القطاع">Sector</th>
           <th data-en="Area" data-ar="المنطقة">Area</th>
           <th data-en="Gap" data-ar="الثغرة">Gap</th>
+          <th data-en="Score" data-ar="الفرصة">Score</th>
         </tr>
       </thead>
       <tbody id="leads-table-body">
-        <!-- سيتم ملء هذا الجسم تلقائياً بواسطة الجافاسكريبت -->
-        <tr><td colspan="5" style="text-align:center; color: var(--ink-3);">⏳ جاري تحميل البيانات...</td></tr>
+        <tr><td colspan="6" style="text-align:center; color: var(--ink-3);">⏳ جاري تحميل البيانات...</td></tr>
       </tbody>
     </table>
   </div>
@@ -413,40 +436,21 @@ footer a { color: rgba(255,255,255,.6); }
   <div class="form-card">
     <form id="contact-form">
       <div class="form-row">
-        <div class="form-group">
-          <label for="agency" data-en="Agency Name" data-ar="اسم الوكالة">Agency Name</label>
-          <input type="text" id="agency" name="agency" data-placeholder-en="Your Agency" data-placeholder-ar="وكالتك" placeholder="Your Agency" required>
-        </div>
-        <div class="form-group">
-          <label for="email" data-en="Work Email" data-ar="البريد الإلكتروني">Work Email</label>
-          <input type="email" id="email" name="email" data-placeholder-en="you@agency.com" data-placeholder-ar="you@agency.com" placeholder="you@agency.com" required>
-        </div>
+        <div class="form-group"><label for="agency" data-en="Agency Name" data-ar="اسم الوكالة">Agency Name</label><input type="text" id="agency" name="agency" placeholder="Your Agency" required></div>
+        <div class="form-group"><label for="email" data-en="Work Email" data-ar="البريد الإلكتروني">Work Email</label><input type="email" id="email" name="email" placeholder="you@agency.com" required></div>
       </div>
       <div class="form-row">
-        <div class="form-group">
-          <label for="sector" data-en="Target Sector" data-ar="القطاع المستهدف">Target Sector</label>
+        <div class="form-group"><label for="sector" data-en="Target Sector" data-ar="القطاع المستهدف">Target Sector</label>
           <select id="sector" name="sector">
-            <option value="" data-en="Select sector..." data-ar="اختر القطاع...">Select sector...</option>
-            <option data-en="Dental Clinics" data-ar="عيادات الأسنان">Dental Clinics</option>
-            <option data-en="Restaurants" data-ar="المطاعم">Restaurants</option>
-            <option data-en="Medical Clinics" data-ar="العيادات الطبية">Medical Clinics</option>
-            <option data-en="Hotels & Travel" data-ar="الفنادق والسفر">Hotels & Travel</option>
-            <option data-en="Real Estate" data-ar="العقارات">Real Estate</option>
-            <option data-en="HVAC / Plumbers" data-ar="تكييف وسباكة">HVAC / Plumbers</option>
-            <option data-en="Cleaning Services" data-ar="شركات تنظيف">Cleaning Services</option>
-            <option data-en="Law Firms" data-ar="مكاتب محاماة">Law Firms</option>
-            <option data-en="Other" data-ar="أخرى">Other</option>
+            <option value="">Select sector...</option>
+            <option>Dental Clinics</option><option>Restaurants</option><option>Medical Clinics</option>
+            <option>Hotels & Travel</option><option>Real Estate</option><option>HVAC / Plumbers</option>
+            <option>Cleaning Services</option><option>Law Firms</option><option>Other</option>
           </select>
         </div>
-        <div class="form-group">
-          <label for="city" data-en="Target City" data-ar="المدينة المستهدفة">Target City</label>
-          <input type="text" id="city" name="city" data-placeholder-en="e.g. Riyadh, Dubai, Denver" data-placeholder-ar="مثال: الرياض، دبي، دنفر" placeholder="e.g. Riyadh, Dubai, Denver">
-        </div>
+        <div class="form-group"><label for="city" data-en="Target City" data-ar="المدينة المستهدفة">Target City</label><input type="text" id="city" name="city" placeholder="e.g. Riyadh, Dubai"></div>
       </div>
-      <div class="form-group">
-        <label for="notes" data-en="Anything specific? (optional)" data-ar="تفاصيل إضافية (اختياري)">Anything specific? (optional)</label>
-        <textarea id="notes" name="notes" data-placeholder-en="E.g. Only businesses with phone numbers, minimum 4-star rating..." data-placeholder-ar="مثال: شركات لديها أرقام هواتف فقط، تقييم 4 نجوم كحد أدنى..." placeholder="E.g. Only businesses with phone numbers..."></textarea>
-      </div>
+      <div class="form-group"><label for="notes" data-en="Anything specific? (optional)" data-ar="تفاصيل إضافية (اختياري)">Anything specific?</label><textarea id="notes" name="notes" placeholder="E.g. Only businesses with phone numbers..."></textarea></div>
       <button class="btn-primary" type="submit" style="width:100%" data-en="Request Custom Report" data-ar="طلب تقرير مخصص">Request Custom Report</button>
       <p class="form-note" data-en="We'll reply within 24 hours with a sample. No commitment required." data-ar="سنرد خلال 24 ساعة بعينة من سوقك المستهدف. لا التزام مطلوب.">We'll reply within 24 hours with a sample. No commitment required.</p>
     </form>
@@ -460,96 +464,150 @@ footer a { color: rgba(255,255,255,.6); }
 </footer>
 
 <script>
-// ── 1. Language Switcher (معدل ليحمل البيانات حسب اللغة) ──
-function setLang(lang) {
-  const root = document.getElementById('html-root');
-  root.setAttribute('lang', lang);
-  root.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-
-  // تحديث النصوص الثابتة
-  document.querySelectorAll('[data-en]').forEach(el => {
-    const text = el.getAttribute('data-' + lang);
-    if (!text) return;
-    if (text.includes('<') || el.tagName === 'H1') { el.innerHTML = text; } 
-    else { el.textContent = text; }
-  });
-
-  // تحديث الـ placeholders
-  document.querySelectorAll('[data-placeholder-' + lang + ']').forEach(el => {
-    el.placeholder = el.getAttribute('data-placeholder-' + lang);
-  });
-
-  // تحديث خيارات الـ select
-  document.querySelectorAll('select option[data-' + lang + ']').forEach(opt => {
-    opt.textContent = opt.getAttribute('data-' + lang);
-  });
-
-  // تحديث الأزرار النشطة
-  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    if (btn.textContent.trim().toLowerCase() === lang) btn.classList.add('active');
-  });
-
-  // ── الأهم: تحميل البيانات حسب اللغة المختارة ──
-  loadLeads(lang);
-}
-
-// ── 2. جلب البيانات من Google Sheets (CSV) ──────────
-// روابطك بصيغة CSV الصحيحة (غيرت pubhtml إلى output=csv)
+// ── روابط CSV (ضع روابطك هنا) ──
 const CSV_URL_EN = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTAvE2s3k_0HbGTx_IqwAum1pi6Q5pi95cYMrUZoEi2wNfFzfW6UVFpOCjRJHLUF3NP4r4S1Zwo_XSH/pub?output=csv';
 const CSV_URL_AR = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTE3bgXzWBs8hoyd7Q4Gy16Y9-02S5dX5W5lxJV2ItqwR14DigdLXg1ULrUFPVMTx7FL9KXYabLhHm5/pub?output=csv';
 
+function getIcon(sector) {
+  if (!sector) return '📌';
+  const lower = sector.toLowerCase();
+  if (lower.includes('dental')) return '🦷';
+  if (lower.includes('restaurant') || lower.includes('food')) return '🍽️';
+  if (lower.includes('medical') || lower.includes('clinic')) return '🏥';
+  if (lower.includes('hotel') || lower.includes('travel')) return '🏨';
+  if (lower.includes('real estate') || lower.includes('property')) return '🏢';
+  if (lower.includes('clean') || lower.includes('hvac')) return '🧹';
+  if (lower.includes('law')) return '⚖️';
+  return '📌';
+}
+
+let lastLoadedData = [];
+
 async function loadLeads(lang = 'en') {
   const tbody = document.getElementById('leads-table-body');
+  const cardsContainer = document.getElementById('dynamicCards');
+  const pillsContainer = document.getElementById('dynamicPills');
   if (!tbody) return;
 
-  // اختيار الرابط حسب اللغة
   const url = (lang === 'ar') ? CSV_URL_AR : CSV_URL_EN;
   
-  // رسالة انتظار
-  tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color: var(--ink-3);">⏳ جاري تحميل البيانات (${lang === 'ar' ? 'عربي' : 'English'})...</td></tr>`;
+  tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; color: var(--ink-3);">⏳ Loading...</td></tr>`;
 
   try {
     const response = await fetch(url);
-    if (!response.ok) throw new Error('فشل التحميل');
+    if (!response.ok) throw new Error('Fetch failed');
     const csvText = await response.text();
     const rows = csvText.split('\n').filter(row => row.trim() !== '');
-    if (rows.length < 2) throw new Error('لا توجد بيانات كافية');
+    if (rows.length < 2) throw new Error('No data');
 
     const headers = rows[0].split(',').map(h => h.trim());
     const idxName = headers.indexOf('Name');
     const idxSector = headers.indexOf('Sector');
     const idxArea = headers.indexOf('Area');
     const idxGap = headers.indexOf('Gap');
-
+    const idxScore = headers.indexOf('Score');
+    const idxDesc = headers.indexOf('Description');
+    
+    let data = [];
     tbody.innerHTML = '';
 
     for (let i = 1; i < rows.length; i++) {
       const cols = rows[i].split(',').map(c => c.trim());
       if (cols.length < 4) continue;
 
-      let badgeClass = 'badge-nosite';
-      let gapText = cols[idxGap] || 'No Website';
-      if (gapText.toLowerCase().includes('slow') || gapText.includes('بطيء')) badgeClass = 'badge-slow';
-      if (gapText.toLowerCase().includes('booking') || gapText.includes('حجز')) badgeClass = 'badge-notrack';
+      const name = cols[idxName] || 'Unknown';
+      const sector = cols[idxSector] || '-';
+      const area = cols[idxArea] || '-';
+      const gap = cols[idxGap] || 'No Website';
+      const score = parseInt(cols[idxScore]) || 75;
+      const desc = cols[idxDesc] || '';
 
+      let badgeClass = 'badge-nosite';
+      if (gap.toLowerCase().includes('slow') || gap.includes('بطيء')) badgeClass = 'badge-slow';
+      if (gap.toLowerCase().includes('booking') || gap.includes('حجز')) badgeClass = 'badge-notrack';
+
+      const scoreClass = score >= 85 ? 'score-high' : (score >= 70 ? 'score-med' : '');
+      
       const tr = document.createElement('tr');
       tr.innerHTML = `
         <td>${i}</td>
-        <td><div class="td-name">${cols[idxName] || 'Unknown'}</div></td>
-        <td class="td-addr">${cols[idxSector] || '-'}</td>
-        <td class="td-addr">${cols[idxArea] || '-'}</td>
-        <td><span class="badge ${badgeClass}">${gapText}</span></td>
+        <td><div class="td-name">${name}</div></td>
+        <td class="td-addr">${sector}</td>
+        <td class="td-addr">${area}</td>
+        <td><span class="badge ${badgeClass}">${gap}</span></td>
+        <td><span class="score-badge ${scoreClass}">${score}%</span></td>
       `;
       tbody.appendChild(tr);
+      
+      data.push({ name, sector, area, gap, score, desc });
     }
+    
+    lastLoadedData = data;
+
+    // تحديث البطاقات
+    cardsContainer.innerHTML = '';
+    const sampleCards = data.slice(0, 6);
+    sampleCards.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'report-card';
+      const icon = getIcon(item.sector);
+      const scoreColor = item.score >= 85 ? 'var(--green)' : (item.score >= 70 ? 'var(--amber)' : 'var(--red)');
+      card.innerHTML = `
+        <div class="report-icon">${icon}</div>
+        <div class="report-title">
+          <span>${item.name}</span>
+          <span style="font-size:.8rem; background:${scoreColor}; color:#fff; padding:2px 10px; border-radius:20px;">${item.score}%</span>
+        </div>
+        <div class="report-desc">${item.desc || `${item.sector} · ${item.area}`}</div>
+        <div class="gap-tags"><span class="gap-tag critical">${item.gap}</span></div>
+      `;
+      cardsContainer.appendChild(card);
+    });
+
+    // تحديث الـ Pills
+    pillsContainer.innerHTML = '';
+    const sectorCounts = {};
+    data.forEach(d => { sectorCounts[d.sector] = (sectorCounts[d.sector] || 0) + 1; });
+    const topSectors = Object.keys(sectorCounts).slice(0, 8);
+    const colors = ['blue','green','amber','red','purple','teal','blue','green'];
+    topSectors.forEach((s, idx) => {
+      const pill = document.createElement('div');
+      pill.className = 'pill';
+      pill.innerHTML = `<span class="pill-dot ${colors[idx % colors.length]}"></span><span>${s} (${sectorCounts[s]})</span>`;
+      pillsContainer.appendChild(pill);
+    });
+
   } catch (error) {
-    tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color: var(--red);">⚠️ تعذر تحميل البيانات، تحقق من رابط CSV.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; color: var(--red);">⚠️ Failed to load data.</td></tr>`;
     console.warn('CSV Load Error:', error);
   }
 }
 
-// ── 3. إرسال النموذج عبر mailto (مجاني بلا حدود) ──
+// ── وظيفة اللغة ──
+function setLang(lang) {
+  const root = document.getElementById('html-root');
+  root.setAttribute('lang', lang);
+  root.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+  document.querySelectorAll('[data-en]').forEach(el => {
+    const text = el.getAttribute('data-' + lang);
+    if (!text) return;
+    if (text.includes('<') || el.tagName === 'H1') { el.innerHTML = text; } 
+    else { el.textContent = text; }
+  });
+  document.querySelectorAll('[data-placeholder-' + lang + ']').forEach(el => {
+    el.placeholder = el.getAttribute('data-placeholder-' + lang);
+  });
+  document.querySelectorAll('select option[data-' + lang + ']').forEach(opt => {
+    opt.textContent = opt.getAttribute('data-' + lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    if (btn.textContent.trim().toLowerCase() === lang) btn.classList.add('active');
+  });
+  loadLeads(lang);
+}
+
+// ── النموذج ──
 document.getElementById('contact-form')?.addEventListener('submit', function(e) {
   e.preventDefault();
   const agency = document.getElementById('agency').value.trim();
@@ -557,21 +615,16 @@ document.getElementById('contact-form')?.addEventListener('submit', function(e) 
   const sector = document.getElementById('sector').value;
   const city = document.getElementById('city').value.trim();
   const notes = document.getElementById('notes').value.trim();
-
-  if (!agency || !email || !sector) {
-    alert('يرجى ملء اسم الوكالة والبريد والقطاع.');
-    return;
-  }
-
+  if (!agency || !email || !sector) { alert('Please fill in all required fields.'); return; }
   const subject = encodeURIComponent(`Custom Report Request — ${sector} — ${city || 'Unspecified'}`);
   const body = encodeURIComponent(`Agency: ${agency}\nEmail: ${email}\nSector: ${sector}\nCity: ${city}\nNotes: ${notes}`);
   window.location.href = `mailto:as.leads.pro@gmail.com?subject=${subject}&body=${body}`;
 });
 
-// ── 4. تحميل البيانات الإنجليزية تلقائياً عند فتح الصفحة ──
+// ── التشغيل ──
 document.addEventListener('DOMContentLoaded', function() {
   loadLeads('en');
 });
 </script>
 </body>
-</html>
+  </html>
